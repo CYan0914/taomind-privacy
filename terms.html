@@ -1,119 +1,160 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>服务条款 — TaoMind（道心）</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.8;
-            color: #333;
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 40px 20px 80px;
-            background: #fafaf8;
-        }
-        h1 { font-size: 28px; margin-bottom: 8px; color: #1a1a1a; }
-        h2 { font-size: 20px; margin-top: 36px; margin-bottom: 12px; color: #2c2c2c; }
-        h3 { font-size: 16px; margin-top: 24px; margin-bottom: 8px; color: #444; }
-        p, li { margin-bottom: 8px; }
-        ul, ol { margin: 8px 0 16px 24px; }
-        li { margin-bottom: 6px; }
-        .meta { color: #888; font-size: 14px; margin-bottom: 32px; }
-        hr { border: none; border-top: 1px solid #e0ddd5; margin: 40px 0; }
-        a { color: #6b5b3e; }
-        a:hover { color: #8b7b5e; }
-        .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e0ddd5; font-size: 13px; color: #999; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>服务条款 Terms of Service — TaoMind 道心</title>
+<script>
+(function(){
+  var lang = null;
+  try { lang = localStorage.getItem('tm-lang'); } catch(e){}
+  if (!lang) lang = (navigator.language || 'en').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en';
+  document.documentElement.setAttribute('data-lang', lang);
+})();
+</script>
+<style>
+  :root{ --paper:#faf8f2; --card:#fffdf8; --ink:#2c2417; --ink-soft:#6f6350; --line:#e8e2d4; --bronze:#9a7b4f; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Roboto,sans-serif;line-height:1.85;color:var(--ink);background:var(--paper)}
+  h1,h2,h3{font-family:Georgia,'Times New Roman','Kaiti SC','STKaiti',KaiTi,serif;font-weight:600}
+  html[data-lang="zh"] .en{display:none!important}
+  html[data-lang="en"] .zh{display:none!important}
+  main{max-width:760px;margin:0 auto;padding:40px 24px 80px}
+  h1{font-size:27px;margin-bottom:8px}
+  h2{font-size:20px;margin-top:38px;margin-bottom:12px}
+  h3{font-size:16px;margin-top:24px;margin-bottom:8px}
+  p,li{margin-bottom:8px}
+  ul,ol{margin:8px 0 16px 24px}
+  .meta{color:#8a8272;font-size:14px;margin-bottom:28px}
+  hr{border:none;border-top:1px solid var(--line);margin:34px 0}
+  a{color:var(--bronze)}
+  .lang-sw{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;font-size:13px}
+  .lang-sw button{border:none;background:transparent;padding:5px 12px;cursor:pointer;color:var(--ink-soft);font-family:inherit}
+  .lang-sw button.on{background:var(--ink);color:#fff}
+  .nav-in{max-width:760px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-family:Georgia,'Kaiti SC','STKaiti',serif;font-size:18px;font-weight:600;text-decoration:none}
+  nav{border-bottom:1px solid var(--line)}
+  .footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:#8a8272}
+  .footer a{color:var(--ink-soft)}
+</style>
 </head>
 <body>
-    <h1>服务条款 — TaoMind（道心）</h1>
-    <p class="meta"><strong>最后更新日期：</strong> 2026 年 8 月 20 日</p>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="index.html">☯ TaoMind <span class="zh">道心</span><span class="en">道心</span></a>
+    <div class="lang-sw">
+      <button id="btn-zh" onclick="setLang('zh')">中</button>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+    <h1><span class="zh">服务条款 — TaoMind（道心）</span><span class="en">Terms of Service — TaoMind</span></h1>
+    <p class="meta"><strong><span class="zh">最后更新日期：</span><span class="en">Last updated:</span></strong> <span class="zh">2026 年 8 月 28 日</span><span class="en">August 28, 2026</span></p>
     <hr>
 
-    <h2>1. 接受条款</h2>
-    <p>下载、安装或使用 TaoMind（以下简称"本应用"）即表示您同意受本服务条款的约束。如果您不同意这些条款，请勿使用本应用。</p>
+    <h2><span class="zh">1. 接受条款</span><span class="en">1. Acceptance of Terms</span></h2>
+    <p><span class="zh">下载、安装或使用 TaoMind（以下简称"本应用"）即表示您同意受本服务条款的约束。如果您不同意这些条款，请勿使用本应用。</span><span class="en">By downloading, installing, or using TaoMind (the "App"), you agree to be bound by these Terms of Service. If you do not agree, please do not use the App.</span></p>
 
-    <h2>2. 服务描述</h2>
-    <p>TaoMind 是一个基于 AI 的智慧指引应用，借鉴《道德经》和《金刚经》等经典哲学文本的智慧，为用户提供反思性的见解。主要功能包括：</p>
+    <h2><span class="zh">2. 服务描述</span><span class="en">2. Description of Service</span></h2>
+    <p><span class="zh">TaoMind 是一个基于 AI 的智慧指引应用，借鉴《道德经》和《金刚经》等经典哲学文本的智慧，为用户提供反思性的见解。主要功能包括：</span><span class="en">TaoMind is an AI-powered guidance app that draws on classical texts such as the Tao Te Ching and the Diamond Sutra to offer reflective insight. Its main features include:</span></p>
     <ul>
-        <li><strong>每日经文：</strong>每天推送一条经典哲学语录与反思问题。</li>
-        <li><strong>求取智慧：</strong>用户描述情境，AI 生成包含经典引文、解读、反思和实践指引的结构化回答。</li>
-        <li><strong>修行日志：</strong>保存和回顾历史智慧对话记录。</li>
+        <li><span class="zh"><strong>每日经文：</strong>每天推送一条经典哲学语录与反思问题。</span><span class="en"><strong>Daily Verse:</strong> a classical quote and a reflective question each day.</span></li>
+        <li><span class="zh"><strong>求取智慧：</strong>用户描述情境，AI 生成包含经典引文、解读、反思和实践指引的结构化回答。</span><span class="en"><strong>Seek Wisdom:</strong> you describe a situation; the AI returns structured guidance with classical quotes, interpretation, reflection, and practice suggestions.</span></li>
+        <li><span class="zh"><strong>每日修行与珍藏卡：</strong>记录每日感悟完成打卡，并依据打卡进度解锁道德经主题珍藏卡。</span><span class="en"><strong>Daily practice &amp; collectible cards:</strong> record daily reflections to check in and unlock Tao Te Ching collectible cards as your streak grows.</span></li>
+        <li><span class="zh"><strong>修行日志：</strong>保存和回顾历史智慧对话记录。</span><span class="en"><strong>Practice journal:</strong> your past sessions, saved and searchable.</span></li>
     </ul>
 
-    <h2>3. 用户责任</h2>
+    <h2><span class="zh">3. 用户责任</span><span class="en">3. User Responsibilities</span></h2>
 
-    <h3>3.1 合法使用</h3>
-    <p>您同意不会将本应用用于任何非法目的，或违反适用法律法规的方式。</p>
+    <h3><span class="zh">3.1 合法使用</span><span class="en">3.1 Lawful Use</span></h3>
+    <p><span class="zh">您同意不会将本应用用于任何非法目的，或违反适用法律法规的方式。</span><span class="en">You agree not to use the App for any unlawful purpose or in violation of applicable laws and regulations.</span></p>
 
-    <h3>3.2 内容限制</h3>
-    <p>您同意不会使用本应用：</p>
+    <h3><span class="zh">3.2 内容限制</span><span class="en">3.2 Content Restrictions</span></h3>
+    <p><span class="zh">您同意不会使用本应用：</span><span class="en">You agree not to use the App to:</span></p>
     <ul>
-        <li>提交违法、骚扰、诽谤或威胁性内容。</li>
-        <li>提交涉及暴力、仇恨言论或非法活动的描述。</li>
-        <li>试图破解、逆向工程或篡改本应用或其后端服务。</li>
+        <li><span class="zh">提交违法、骚扰、诽谤或威胁性内容。</span><span class="en">submit unlawful, harassing, defamatory, or threatening content;</span></li>
+        <li><span class="zh">提交涉及暴力、仇恨言论或非法活动的描述。</span><span class="en">submit descriptions involving violence, hate speech, or illegal activity;</span></li>
+        <li><span class="zh">试图破解、逆向工程或篡改本应用或其后端服务。</span><span class="en">attempt to crack, reverse engineer, or tamper with the App or its backend services.</span></li>
     </ul>
 
-    <h3>3.3 账户安全</h3>
-    <p>本应用当前版本不要求创建账户。</p>
+    <h3><span class="zh">3.3 账户</span><span class="en">3.3 Accounts</span></h3>
+    <p><span class="zh">本应用通过"通过 Apple 登录"提供可选账户，用于在您的设备间同步修行记录。您对账户凭据的保管负责，并同意不与他人共享账户。</span><span class="en">The App offers an optional account via Sign in with Apple, used to sync your practice across your devices. You are responsible for safeguarding your credentials and agree not to share your account with others.</span></p>
 
-    <h2>4. 知识产权</h2>
+    <h2><span class="zh">4. 知识产权</span><span class="en">4. Intellectual Property</span></h2>
 
-    <h3>4.1 应用所有权</h3>
-    <p>TaoMind 及其所有相关代码、设计、品牌和内容的全部知识产权归开发者所有。</p>
+    <h3><span class="zh">4.1 应用所有权</span><span class="en">4.1 App Ownership</span></h3>
+    <p><span class="zh">TaoMind 及其所有相关代码、设计、品牌和内容的全部知识产权归开发者所有。</span><span class="en">All intellectual property in the App — code, design, branding, and content — belongs to the developer.</span></p>
 
-    <h3>4.2 用户内容</h3>
-    <p>您保留您提交的问题和描述的著作权。您授予我们存储和处理这些内容的权利，以便为您提供核心服务。</p>
+    <h3><span class="zh">4.2 用户内容</span><span class="en">4.2 User Content</span></h3>
+    <p><span class="zh">您保留您提交的问题和描述的著作权。您授予我们存储和处理这些内容的权利，以便为您提供核心服务。</span><span class="en">You retain the copyright to the questions and descriptions you submit. You grant us the right to store and process that content in order to provide the core service.</span></p>
 
-    <h3>4.3 AI 生成内容</h3>
-    <p>通过"求取智慧"功能生成的回答由 AI 模型产生，其版权归属及相关法律问题遵循适用法律的规定。</p>
+    <h3><span class="zh">4.3 AI 生成内容</span><span class="en">4.3 AI-Generated Content</span></h3>
+    <p><span class="zh">通过"求取智慧"等功能生成的回答由 AI 模型产生，其版权归属及相关法律问题遵循适用法律的规定。</span><span class="en">Answers generated by the App are produced by AI models; ownership and related legal questions are governed by applicable law.</span></p>
 
-    <h2>5. 免责声明</h2>
+    <h2><span class="zh">5. 免责声明</span><span class="en">5. Disclaimers</span></h2>
 
-    <h3>5.1 内容性质</h3>
-    <p><strong>AI 生成的内容具有反思性，不能替代专业建议。</strong> 本应用提供的内容：</p>
+    <h3><span class="zh">5.1 内容性质</span><span class="en">5.1 Nature of Content</span></h3>
+    <p><span class="zh"><strong>AI 生成的内容具有反思性，不能替代专业建议。</strong> 本应用提供的内容：</span><span class="en"><strong>AI-generated content is reflective in nature and is not a substitute for professional advice.</strong> Content provided by the App:</span></p>
     <ul>
-        <li>不构成心理咨询、治疗或医疗建议。</li>
-        <li>不构成法律、财务或商业建议。</li>
-        <li>仅供个人反思和启发参考。</li>
+        <li><span class="zh">不构成心理咨询、治疗或医疗建议。</span><span class="en">does not constitute psychological, therapeutic, or medical advice;</span></li>
+        <li><span class="zh">不构成法律、财务或商业建议。</span><span class="en">does not constitute legal, financial, or business advice;</span></li>
+        <li><span class="zh">仅供个人反思和启发参考。</span><span class="en">is provided for personal reflection and inspiration only.</span></li>
     </ul>
 
-    <h3>5.2 准确性</h3>
-    <p>我们不保证 AI 生成内容的准确性、完整性或可靠性。</p>
+    <h3><span class="zh">5.2 准确性</span><span class="en">5.2 Accuracy</span></h3>
+    <p><span class="zh">我们不保证 AI 生成内容的准确性、完整性或可靠性。</span><span class="en">We do not guarantee the accuracy, completeness, or reliability of AI-generated content.</span></p>
 
-    <h3>5.3 服务可用性</h3>
-    <p>我们尽合理努力保持服务可用，但不保证服务不会中断或没有错误。</p>
+    <h3><span class="zh">5.3 服务可用性</span><span class="en">5.3 Availability</span></h3>
+    <p><span class="zh">我们尽合理努力保持服务可用，但不保证服务不会中断或没有错误。</span><span class="en">We make reasonable efforts to keep the service available but do not guarantee uninterrupted or error-free operation.</span></p>
 
-    <h2>6. 责任限制</h2>
-    <p>在法律允许的最大范围内，TaoMind 及其开发者不对因使用或无法使用本应用而产生的任何间接、偶然、特殊或后果性损害承担责任。</p>
+    <h2><span class="zh">6. 责任限制</span><span class="en">6. Limitation of Liability</span></h2>
+    <p><span class="zh">在法律允许的最大范围内，TaoMind 及其开发者不对因使用或无法使用本应用而产生的任何间接、偶然、特殊或后果性损害承担责任。</span><span class="en">To the maximum extent permitted by law, TaoMind and its developer shall not be liable for any indirect, incidental, special, or consequential damages arising from use of, or inability to use, the App.</span></p>
 
-    <h2>7. 付费订阅</h2>
-    <p>本应用提供可选的 TaoMind Pro 订阅服务，解锁全部高级功能。订阅方案及价格如下：</p>
+    <h2><span class="zh">7. 付费订阅与买断</span><span class="en">7. Subscriptions &amp; Lifetime Purchase</span></h2>
+    <p><span class="zh">本应用提供可选的 TaoMind Pro 高级功能，方案及价格如下：</span><span class="en">Optional TaoMind Pro features are offered on the following plans:</span></p>
     <ul>
-        <li><strong>月订阅：</strong> $7.99 / 月</li>
-        <li><strong>季订阅：</strong> $17.99 / 季（3 个月）</li>
-        <li><strong>年订阅：</strong> $39.99 / 年</li>
+        <li><span class="zh"><strong>月订阅：</strong> $7.99 / 月</span><span class="en"><strong>Monthly:</strong> $7.99 / month</span></li>
+        <li><span class="zh"><strong>季订阅：</strong> $17.99 / 季（3 个月）</span><span class="en"><strong>Quarterly:</strong> $17.99 / 3 months</span></li>
+        <li><span class="zh"><strong>年订阅：</strong> $39.99 / 年</span><span class="en"><strong>Yearly:</strong> $39.99 / year</span></li>
+        <li><span class="zh"><strong>终身买断：</strong> 一次性付费，永久解锁 Pro 功能（具体价格以应用内展示为准）</span><span class="en"><strong>Lifetime:</strong> one-time purchase, permanent access to Pro features (see in-app pricing)</span></li>
     </ul>
-    <p>所有付费订阅均通过 Apple 的 App Store In-App Purchase 系统处理。订阅将自动续期，除非在当前周期结束前至少 24 小时通过 Apple ID 设置关闭自动续期。当前周期内不支持取消已生效的订阅。</p>
-    <p>如需管理订阅或申请退款，请前往 Apple ID 设置或联系 Apple 支持。</p>
+    <p><span class="zh">所有付费均通过 Apple 的 App Store In-App Purchase 系统处理。订阅将自动续期，除非在当前周期结束前至少 24 小时通过 Apple ID 设置关闭自动续期。当前周期内不支持取消已生效的订阅。</span><span class="en">All payments are processed through Apple's In-App Purchase system. Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current period via your Apple ID settings. Cancellation takes effect at the end of the current period.</span></p>
+    <p><span class="zh">如需管理订阅或申请退款，请前往 Apple ID 设置或联系 Apple 支持。</span><span class="en">To manage subscriptions or request refunds, go to your Apple ID settings or contact Apple Support.</span></p>
 
-    <h2>8. 终止</h2>
-    <p>我们保留在任何时候终止或暂停您访问本应用的权利，如果您违反本服务条款，无需事先通知。</p>
+    <h2><span class="zh">8. 终止</span><span class="en">8. Termination</span></h2>
+    <p><span class="zh">我们保留在任何时候终止或暂停您访问本应用的权利，如果您违反本服务条款，无需事先通知。</span><span class="en">We reserve the right to suspend or terminate your access to the App at any time, without prior notice, if you breach these Terms.</span></p>
 
-    <h2>9. 适用法律</h2>
-    <p>本服务条款受中华人民共和国法律管辖，并按其解释。</p>
+    <h2><span class="zh">9. 适用法律</span><span class="en">9. Governing Law</span></h2>
+    <p><span class="zh">本服务条款受中华人民共和国法律管辖，并按其解释。</span><span class="en">These Terms are governed by and construed in accordance with the laws of the People's Republic of China.</span></p>
 
-    <h2>10. 条款变更</h2>
-    <p>我们可能会不时更新本服务条款。重大变更时，我们会通过应用内通知告知您。</p>
+    <h2><span class="zh">10. 条款变更</span><span class="en">10. Changes to These Terms</span></h2>
+    <p><span class="zh">我们可能会不时更新本服务条款。重大变更时，我们会通过应用内通知告知您。</span><span class="en">We may update these Terms from time to time. For material changes, we will notify you in the App.</span></p>
 
-    <h2>11. 联系方式</h2>
-    <p><strong>邮箱：</strong> <a href="mailto:haojia.zhang@icloud.com">haojia.zhang@icloud.com</a></p>
+    <h2><span class="zh">11. 联系方式</span><span class="en">11. Contact</span></h2>
+    <p><strong><span class="zh">邮箱：</span><span class="en">Email:</span></strong> <a href="mailto:haojia.zhang@icloud.com">haojia.zhang@icloud.com</a></p>
 
     <div class="footer">
-        <p>本服务条款以中文编写，如有争议以中文版本为准。</p>
+        <p><span class="zh">本服务条款以中文编写，如有争议以中文版本为准。</span><span class="en">These Terms were originally written in Chinese; in case of any conflict, the Chinese version shall prevail.</span></p>
+        <p style="margin-top:10px"><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a> · <a href="privacy.html"><span class="zh">隐私政策</span><span class="en">Privacy Policy</span></a> · <a href="support.html"><span class="zh">技术支持</span><span class="en">Support</span></a></p>
     </div>
+</main>
+
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  try { localStorage.setItem('tm-lang', l); } catch(e){}
+  document.getElementById('btn-zh').classList.toggle('on', l === 'zh');
+  document.getElementById('btn-en').classList.toggle('on', l === 'en');
+}
+(function(){
+  var cur = document.documentElement.getAttribute('data-lang') || 'zh';
+  document.getElementById('btn-zh').classList.toggle('on', cur === 'zh');
+  document.getElementById('btn-en').classList.toggle('on', cur === 'en');
+})();
+</script>
+
 </body>
 </html>

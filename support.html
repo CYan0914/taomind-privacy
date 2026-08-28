@@ -1,123 +1,175 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>技术支持 — TaoMind（道心）</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.8;
-            color: #333;
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 40px 20px 80px;
-            background: #fafaf8;
-        }
-        h1 { font-size: 28px; margin-bottom: 8px; color: #1a1a1a; }
-        h2 { font-size: 20px; margin-top: 36px; margin-bottom: 12px; color: #2c2c2c; }
-        h3 { font-size: 16px; margin-top: 24px; margin-bottom: 8px; color: #444; }
-        p { margin-bottom: 12px; }
-        ul { margin: 8px 0 16px 24px; }
-        li { margin-bottom: 6px; }
-        .meta { color: #888; font-size: 14px; margin-bottom: 32px; }
-        hr { border: none; border-top: 1px solid #e0ddd5; margin: 40px 0; }
-        a { color: #6b5b3e; }
-        a:hover { color: #8b7b5e; }
-        .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e0ddd5; font-size: 13px; color: #999; }
-        .faq-item { margin-bottom: 20px; }
-        .faq-q { font-weight: 600; color: #2c2417; margin-bottom: 4px; }
-        .faq-a { padding-left: 8px; border-left: 3px solid #e0ddd5; }
-        .contact-box { background: #fff; border: 1px solid #eeeae0; border-radius: 12px; padding: 24px; margin: 24px 0; text-align: center; }
-        .contact-box .email { font-size: 18px; color: #6b5b3e; font-weight: 600; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>技术支持 Support — TaoMind 道心</title>
+<script>
+(function(){
+  var lang = null;
+  try { lang = localStorage.getItem('tm-lang'); } catch(e){}
+  if (!lang) lang = (navigator.language || 'en').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en';
+  document.documentElement.setAttribute('data-lang', lang);
+})();
+</script>
+<style>
+  :root{ --paper:#faf8f2; --card:#fffdf8; --ink:#2c2417; --ink-soft:#6f6350; --line:#e8e2d4; --bronze:#9a7b4f; --cinnabar:#b03a2e; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Roboto,sans-serif;line-height:1.85;color:var(--ink);background:var(--paper)}
+  h1,h2,h3{font-family:Georgia,'Times New Roman','Kaiti SC','STKaiti',KaiTi,serif;font-weight:600}
+  html[data-lang="zh"] .en{display:none!important}
+  html[data-lang="en"] .zh{display:none!important}
+  main{max-width:760px;margin:0 auto;padding:40px 24px 80px}
+  h1{font-size:27px;margin-bottom:8px}
+  h2{font-size:20px;margin-top:38px;margin-bottom:12px}
+  p{margin-bottom:12px}
+  ul{margin:8px 0 16px 24px}
+  li{margin-bottom:6px}
+  .meta{color:#8a8272;font-size:14px;margin-bottom:28px}
+  hr{border:none;border-top:1px solid var(--line);margin:34px 0}
+  a{color:var(--bronze)}
+  .lang-sw{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;font-size:13px}
+  .lang-sw button{border:none;background:transparent;padding:5px 12px;cursor:pointer;color:var(--ink-soft);font-family:inherit}
+  .lang-sw button.on{background:var(--ink);color:#fff}
+  .nav-in{max-width:760px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-family:Georgia,'Kaiti SC','STKaiti',serif;font-size:18px;font-weight:600;text-decoration:none}
+  nav{border-bottom:1px solid var(--line)}
+  .faq-item{margin-bottom:20px}
+  .faq-q{font-weight:600;color:var(--ink);margin-bottom:4px}
+  .faq-a{padding-left:10px;border-left:3px solid var(--line);color:var(--ink-soft)}
+  .contact-box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px;margin:24px 0;text-align:center}
+  .contact-box .email{font-size:18px;color:var(--bronze);font-weight:600}
+  .footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:#8a8272;text-align:center}
+  .footer a{color:var(--ink-soft)}
+</style>
 </head>
 <body>
 
-<h1>技术支持 — TaoMind（道心）</h1>
-<p class="meta">如有任何问题，请查阅下方常见问题或联系我们。</p>
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="index.html">☯ TaoMind <span class="zh">道心</span><span class="en">道心</span></a>
+    <div class="lang-sw">
+      <button id="btn-zh" onclick="setLang('zh')">中</button>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<h1><span class="zh">技术支持 — TaoMind（道心）</span><span class="en">Support — TaoMind</span></h1>
+<p class="meta"><span class="zh">如有任何问题，请查阅下方常见问题或联系我们。</span><span class="en">Check the FAQ below, or contact us directly.</span></p>
 <hr>
 
-<h2>常见问题</h2>
+<h2><span class="zh">常见问题</span><span class="en">Frequently Asked Questions</span></h2>
 
 <div class="faq-item">
-    <div class="faq-q">❓ 应用无法打开或闪退</div>
+    <div class="faq-q">❓ <span class="zh">应用无法打开或闪退</span><span class="en">The app won't open or crashes</span></div>
     <div class="faq-a">
-        <p>请尝试以下步骤：</p>
+        <p><span class="zh">请尝试以下步骤：</span><span class="en">Try the following:</span></p>
         <ul>
-            <li>确保已更新到最新版本</li>
-            <li>重启设备</li>
-            <li>卸载后重新安装（数据会保留在云端）</li>
+            <li><span class="zh">确保已更新到最新版本</span><span class="en">Make sure you're on the latest version</span></li>
+            <li><span class="zh">重启设备</span><span class="en">Restart your device</span></li>
+            <li><span class="zh">卸载后重新安装（登录后数据会从云端恢复）</span><span class="en">Reinstall the app (your data restores from the cloud after sign-in)</span></li>
         </ul>
     </div>
 </div>
 
 <div class="faq-item">
-    <div class="faq-q">❓ 求取智慧时没有回应或提示连接错误</div>
+    <div class="faq-q">❓ <span class="zh">求取智慧时没有回应或提示连接错误</span><span class="en">Seek Wisdom isn't responding, or I see a connection error</span></div>
     <div class="faq-a">
-        <p>这通常是由于网络连接问题或服务器临时繁忙。请尝试：</p>
+        <p><span class="zh">这通常是由于网络连接问题或服务器临时繁忙。请尝试：</span><span class="en">This is usually a network issue or temporary server load. Try:</span></p>
         <ul>
-            <li>检查您的网络连接是否正常</li>
-            <li>等待片刻后重试</li>
-            <li>如持续失败，请联系我们</li>
+            <li><span class="zh">检查您的网络连接是否正常</span><span class="en">Checking your network connection</span></li>
+            <li><span class="zh">等待片刻后重试</span><span class="en">Retrying after a short wait</span></li>
+            <li><span class="zh">如持续失败，请联系我们</span><span class="en">Contacting us if the problem persists</span></li>
         </ul>
     </div>
 </div>
 
 <div class="faq-item">
-    <div class="faq-q">❓ 订阅后仍显示免费版</div>
+    <div class="faq-q">❓ <span class="zh">如何获得修行珍藏卡？</span><span class="en">How do I earn collectible cards?</span></div>
     <div class="faq-a">
-        <p>请尝试以下步骤：</p>
+        <p><span class="zh">完成每日修行打卡（或在有效期内补卡）即可解锁。每次打卡会随机发放一张你尚未拥有的珍藏卡，共 81 张，对应《道德经》81 章。收藏进度可在"每日修行"页的"修行纪念册"中查看，点开任意已拥有的卡片即可分享。</span><span class="en">Complete a daily check-in (or use streak backfill when available). Each check-in grants one random card you don't yet own — 81 in total, one for each chapter of the Tao Te Ching. Your collection lives in the Practice tab; tap any owned card to share it.</span></p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-q">❓ <span class="zh">分享的珍藏卡图片保存在哪里？</span><span class="en">Where does my shared card image go?</span></div>
+    <div class="faq-a">
+        <p><span class="zh">点击"分享"后会打开 iOS 系统分享面板，可以选择微信、朋友圈、Instagram、X 或"存储图像"保存到相册等任意支持图片分享的渠道。</span><span class="en">Tapping Share opens the iOS share sheet, where you can send the card via any channel that accepts images — Messages, Mail, Instagram, X, WeChat, Save to Photos, and more.</span></p>
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-q">❓ <span class="zh">订阅后仍显示免费版</span><span class="en">I subscribed but the app still shows the free version</span></div>
+    <div class="faq-a">
+        <p><span class="zh">请尝试以下步骤：</span><span class="en">Try the following:</span></p>
         <ul>
-            <li>打开"设置"页面，系统会自动刷新订阅状态</li>
-            <li>在 iPhone "设置" > "Apple ID" > "订阅"中确认订阅是否有效</li>
-            <li>点击"恢复购买"按钮</li>
+            <li><span class="zh">打开"设置"页面，系统会自动刷新订阅状态</span><span class="en">Open the Settings tab — the app refreshes your subscription status automatically</span></li>
+            <li><span class="zh">在 iPhone "设置" > "Apple ID" > "订阅"中确认订阅是否有效</span><span class="en">Confirm the subscription is active in iPhone Settings > Apple ID > Subscriptions</span></li>
+            <li><span class="zh">点击"恢复购买"按钮</span><span class="en">Tap "Restore Purchases"</span></li>
         </ul>
     </div>
 </div>
 
 <div class="faq-item">
-    <div class="faq-q">❓ 如何取消订阅？</div>
+    <div class="faq-q">❓ <span class="zh">如何取消订阅？</span><span class="en">How do I cancel my subscription?</span></div>
     <div class="faq-a">
-        <p>您可以通过 iPhone 系统设置取消订阅：</p>
+        <p><span class="zh">您可以通过 iPhone 系统设置取消订阅：</span><span class="en">Cancel anytime from your iPhone's system settings:</span></p>
         <ul>
-            <li>打开 iPhone "设置"</li>
-            <li>点击顶部的"Apple ID"</li>
-            <li>进入"订阅"</li>
-            <li>找到 TaoMind 并选择"取消订阅"</li>
+            <li><span class="zh">打开 iPhone "设置"</span><span class="en">Open Settings</span></li>
+            <li><span class="zh">点击顶部的"Apple ID"</span><span class="en">Tap your Apple ID at the top</span></li>
+            <li><span class="zh">进入"订阅"</span><span class="en">Go to Subscriptions</span></li>
+            <li><span class="zh">找到 TaoMind 并选择"取消订阅"</span><span class="en">Find TaoMind and tap Cancel Subscription</span></li>
         </ul>
     </div>
 </div>
 
 <div class="faq-item">
-    <div class="faq-q">❓ 我的数据安全吗？</div>
+    <div class="faq-q">❓ <span class="zh">我的数据安全吗？</span><span class="en">Is my data safe?</span></div>
     <div class="faq-a">
-        <p>所有数据传输均通过 HTTPS 加密。我们不会将您的数据出售给第三方。详情请参阅 <a href="privacy.html">隐私政策</a>。</p>
+        <p><span class="zh">所有数据传输均通过 HTTPS 加密。我们不会将您的数据出售给第三方。详情请参阅<a href="privacy.html">隐私政策</a>。</span><span class="en">All data in transit is encrypted over HTTPS, and we never sell your data. See our <a href="privacy.html">Privacy Policy</a> for details.</span></p>
     </div>
 </div>
 
 <div class="faq-item">
-    <div class="faq-q">❓ 如何删除我的账户和数据？</div>
+    <div class="faq-q">❓ <span class="zh">如何删除我的账户和数据？</span><span class="en">How do I delete my account and data?</span></div>
     <div class="faq-a">
-        <p>您可以在"修行日志"中单条删除记录。如需完全删除所有数据，请通过下方邮箱联系我们，我们将在合理时间内处理。</p>
+        <p><span class="zh">您可以在"修行日志"中单条删除记录。如需完全删除所有数据，请通过下方邮箱联系我们，我们将在合理时间内处理。</span><span class="en">You can delete individual entries in the practice journal. To erase everything, email us below and we'll take care of it promptly.</span></p>
     </div>
 </div>
 
 <hr>
 
-<h2>联系我们</h2>
+<h2><span class="zh">联系我们</span><span class="en">Contact Us</span></h2>
 
 <div class="contact-box">
-    <p>如果常见问题未能解决您的问题，请发送邮件至：</p>
+    <p><span class="zh">如果常见问题未能解决您的问题，请发送邮件至：</span><span class="en">Still stuck? Email us at:</span></p>
     <p class="email"><a href="mailto:haojia.zhang@icloud.com">haojia.zhang@icloud.com</a></p>
-    <p style="font-size: 14px; color: #888; margin-top: 8px;">我们会在 1-2 个工作日内回复您。</p>
+    <p style="font-size:14px;color:#8a8272;margin-top:8px"><span class="zh">我们会在 1-2 个工作日内回复您。</span><span class="en">We usually reply within 1–2 business days.</span></p>
 </div>
 
 <div class="footer">
-    <p><a href="index.html">首页</a> · <a href="privacy.html">隐私政策</a> · <a href="terms.html">服务条款</a></p>
-    <p>&copy; 2026 TaoMind. All rights reserved.</p>
+    <p><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a> · <a href="privacy.html"><span class="zh">隐私政策</span><span class="en">Privacy Policy</span></a> · <a href="terms.html"><span class="zh">服务条款</span><span class="en">Terms of Service</span></a></p>
+    <p>© 2026 TaoMind <span class="zh">道心</span><span class="en">道心</span>. <span class="zh">保留所有权利。</span><span class="en">All rights reserved.</span></p>
 </div>
+
+</main>
+
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  try { localStorage.setItem('tm-lang', l); } catch(e){}
+  document.getElementById('btn-zh').classList.toggle('on', l === 'zh');
+  document.getElementById('btn-en').classList.toggle('on', l === 'en');
+}
+(function(){
+  var cur = document.documentElement.getAttribute('data-lang') || 'zh';
+  document.getElementById('btn-zh').classList.toggle('on', cur === 'zh');
+  document.getElementById('btn-en').classList.toggle('on', cur === 'en');
+})();
+</script>
 
 </body>
 </html>

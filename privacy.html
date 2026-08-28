@@ -1,119 +1,160 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>隐私政策 — TaoMind（道心）</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.8;
-            color: #333;
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 40px 20px 80px;
-            background: #fafaf8;
-        }
-        h1 { font-size: 28px; margin-bottom: 8px; color: #1a1a1a; }
-        h2 { font-size: 20px; margin-top: 36px; margin-bottom: 12px; color: #2c2c2c; }
-        h3 { font-size: 16px; margin-top: 24px; margin-bottom: 8px; color: #444; }
-        p { margin-bottom: 12px; }
-        ul { margin: 8px 0 16px 24px; }
-        li { margin-bottom: 6px; }
-        .meta { color: #888; font-size: 14px; margin-bottom: 32px; }
-        hr { border: none; border-top: 1px solid #e0ddd5; margin: 40px 0; }
-        table { width: 100%; border-collapse: collapse; margin: 16px 0; }
-        th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
-        th { background: #f0ede5; }
-        a { color: #6b5b3e; }
-        a:hover { color: #8b7b5e; }
-        .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e0ddd5; font-size: 13px; color: #999; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>隐私政策 Privacy Policy — TaoMind 道心</title>
+<script>
+(function(){
+  var lang = null;
+  try { lang = localStorage.getItem('tm-lang'); } catch(e){}
+  if (!lang) lang = (navigator.language || 'en').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en';
+  document.documentElement.setAttribute('data-lang', lang);
+})();
+</script>
+<style>
+  :root{ --paper:#faf8f2; --card:#fffdf8; --ink:#2c2417; --ink-soft:#6f6350; --line:#e8e2d4; --bronze:#9a7b4f; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Roboto,sans-serif;line-height:1.85;color:var(--ink);background:var(--paper)}
+  h1,h2,h3{font-family:Georgia,'Times New Roman','Kaiti SC','STKaiti',KaiTi,serif;font-weight:600}
+  html[data-lang="zh"] .en{display:none!important}
+  html[data-lang="en"] .zh{display:none!important}
+  main{max-width:760px;margin:0 auto;padding:40px 24px 80px}
+  h1{font-size:27px;margin-bottom:8px}
+  h2{font-size:20px;margin-top:38px;margin-bottom:12px}
+  h3{font-size:16px;margin-top:24px;margin-bottom:8px}
+  p{margin-bottom:12px}
+  ul,ol{margin:8px 0 16px 24px}
+  li{margin-bottom:6px}
+  .meta{color:#8a8272;font-size:14px;margin-bottom:28px}
+  hr{border:none;border-top:1px solid var(--line);margin:34px 0}
+  table{width:100%;border-collapse:collapse;margin:16px 0}
+  th,td{border:1px solid var(--line);padding:8px 12px;text-align:left;font-size:14.5px}
+  th{background:#f0ece0}
+  a{color:var(--bronze)}
+  .lang-sw{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;font-size:13px}
+  .lang-sw button{border:none;background:transparent;padding:5px 12px;cursor:pointer;color:var(--ink-soft);font-family:inherit}
+  .lang-sw button.on{background:var(--ink);color:#fff}
+  .nav-in{max-width:760px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-family:Georgia,'Kaiti SC','STKaiti',serif;font-size:18px;font-weight:600;text-decoration:none}
+  nav{border-bottom:1px solid var(--line)}
+  .footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:#8a8272}
+  .footer a{color:var(--ink-soft)}
+</style>
 </head>
 <body>
-    <h1>隐私政策 — TaoMind（道心）</h1>
-    <p class="meta"><strong>最后更新日期：</strong> 2026 年 8 月 28 日</p>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="index.html">☯ TaoMind <span class="zh">道心</span><span class="en">道心</span></a>
+    <div class="lang-sw">
+      <button id="btn-zh" onclick="setLang('zh')">中</button>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+    <h1><span class="zh">隐私政策 — TaoMind（道心）</span><span class="en">Privacy Policy — TaoMind</span></h1>
+    <p class="meta"><strong><span class="zh">最后更新日期：</span><span class="en">Last updated:</span></strong> <span class="zh">2026 年 8 月 28 日</span><span class="en">August 28, 2026</span></p>
     <hr>
 
-    <h2>1. 概述</h2>
-    <p>TaoMind（以下简称"我们"）尊重并保护您的隐私。本隐私政策旨在说明当您使用 TaoMind iOS 应用（以下简称"本应用"）时，我们如何收集、使用、存储和披露您的信息。</p>
-    <p>使用本应用即表示您同意本隐私政策中的条款。</p>
+    <h2><span class="zh">1. 概述</span><span class="en">1. Overview</span></h2>
+    <p><span class="zh">TaoMind（道心）（以下简称"我们"）尊重并保护您的隐私。本隐私政策旨在说明当您使用 TaoMind iOS 应用（以下简称"本应用"）时，我们如何收集、使用、存储和披露您的信息。</span><span class="en">TaoMind ("we", "us") respects and protects your privacy. This Privacy Policy explains how we collect, use, store, and disclose your information when you use the TaoMind iOS app (the "App").</span></p>
+    <p><span class="zh">使用本应用即表示您同意本隐私政策中的条款。</span><span class="en">By using the App, you agree to the terms of this Privacy Policy.</span></p>
 
-    <h2>2. 我们收集的信息</h2>
+    <h2><span class="zh">2. 我们收集的信息</span><span class="en">2. Information We Collect</span></h2>
 
-    <h3>2.1 您主动提供的信息</h3>
+    <h3><span class="zh">2.1 您主动提供的信息</span><span class="en">2.1 Information You Provide</span></h3>
     <ul>
-        <li><strong>您提出的问题/描述：</strong>您在使用"求取智慧"功能时输入的文本内容。</li>
-        <li><strong>场景类型：</strong>您在提问时选择的场景标签（商业决策、领导力、职业发展、个人成长、人际冲突等）。</li>
-        <li><strong>语言偏好：</strong>您选择的界面语言（中文或英文）。</li>
-        <li><strong>通过 Apple 登录：</strong>当您使用"通过 Apple 登录"时，我们会接收 Apple 生成的唯一标识符，以及您选择与 App 共享的电子邮箱（可以是 Apple 隐藏邮箱）和姓名。</li>
+        <li><span class="zh"><strong>您提出的问题/描述：</strong>您在使用"求取智慧"或"每日修行"功能时输入的文本内容。</span><span class="en"><strong>Your questions and reflections:</strong> the text you enter when using Seek Wisdom or the daily practice feature.</span></li>
+        <li><span class="zh"><strong>场景类型：</strong>您在提问时选择的场景标签（商业决策、领导力、职业发展、个人成长、人际冲突等）。</span><span class="en"><strong>Scenario tags:</strong> the context you select when asking (business decisions, leadership, career, personal growth, relationships, etc.).</span></li>
+        <li><span class="zh"><strong>语言偏好：</strong>您选择的界面语言（中文或英文）。</span><span class="en"><strong>Language preference:</strong> the interface language you choose (Chinese or English).</span></li>
+        <li><span class="zh"><strong>通过 Apple 登录：</strong>当您使用"通过 Apple 登录"时，我们会接收 Apple 生成的唯一标识符，以及您选择与 App 共享的电子邮箱（可以是 Apple 隐藏邮箱）和姓名，用于在您的设备间同步修行记录。我们不会获取您的 Apple ID 密码。</span><span class="en"><strong>Sign in with Apple:</strong> when you sign in with Apple, we receive a unique identifier generated by Apple, plus the email (which may be a private relay address) and name you choose to share with the App — used to sync your practice across your devices. We never receive your Apple ID password.</span></li>
     </ul>
 
-    <h3>2.2 自动收集的信息</h3>
+    <h3><span class="zh">2.2 自动收集的信息</span><span class="en">2.2 Information Collected Automatically</span></h3>
     <ul>
-        <li><strong>使用数据：</strong>我们收集基本的交互数据，如每日经文获取次数、提问时间戳等，用于改善服务质量。</li>
-        <li><strong>匿名功能统计：</strong>我们收集应用内关键功能的使用统计（例如：付费页面展示次数、购买开始/成功、每日打卡与纪念卡解锁、日志保存等事件计数）。这些统计<strong>仅包含事件名称与功能参数</strong>（如触发场景、订阅套餐编号、卡片编号），<strong>不包含您输入的任何文字内容</strong>，且在未登录时完全匿名。仅用于了解哪些功能对用户有帮助，以改进产品。</li>
-        <li><strong>设备信息：</strong>应用版本号、操作系统版本（用于兼容性分析）。</li>
+        <li><span class="zh"><strong>使用数据：</strong>我们收集基本的交互数据，如每日经文获取次数、提问与打卡时间戳、打卡天数等，用于提供连击统计、珍藏卡发放并改善服务质量。</span><span class="en"><strong>Usage data:</strong> basic interaction data such as verse fetches, check-in timestamps, and streak counts — used to provide streak statistics, run the card collection, and improve the service.</span></li>
+        <li><span class="zh"><strong>匿名功能统计：</strong>我们收集应用内关键功能的使用统计（例如：付费页面展示次数、购买开始/成功、每日打卡与纪念卡解锁、日志保存等事件计数）。这些统计<strong>仅包含事件名称与功能参数</strong>（如触发场景、订阅套餐编号、卡片编号），<strong>不包含您输入的任何文字内容</strong>，且在未登录时完全匿名。仅用于了解哪些功能对用户有帮助，以改进产品。</span><span class="en"><strong>Anonymous feature analytics:</strong> we collect usage counts for key in-app features (e.g., paywall views, purchase starts/completions, daily check-ins and card unlocks, journal saves). These statistics <strong>contain only event names and feature parameters</strong> (such as the scenario triggered, subscription plan ID, or card number) and <strong>never include any text you enter</strong>; when signed out they are fully anonymous. They are used solely to understand which features help users and to improve the product.</span></li>
+        <li><span class="zh"><strong>设备信息：</strong>应用版本号、操作系统版本（用于兼容性分析）。</span><span class="en"><strong>Device information:</strong> app version and OS version, used for compatibility analysis.</span></li>
     </ul>
 
-    <h3>2.3 我们不收集的信息</h3>
+    <h3><span class="zh">2.3 我们不收集的信息</span><span class="en">2.3 Information We Do Not Collect</span></h3>
     <ul>
-        <li>除您通过"通过 Apple 登录"主动共享的信息外，我们不收集您的姓名、电子邮件地址、电话号码等个人身份信息。</li>
-        <li>我们不收集精确位置数据。</li>
-        <li>我们不收集通讯录、相册等设备敏感数据；麦克风仅在您主动使用语音输入功能时使用，录音内容仅用于转成文字，不做其他用途、不予保存。</li>
-        <li>我们不会将您的数据出售给第三方。</li>
+        <li><span class="zh">除您通过"通过 Apple 登录"主动共享的信息外，我们不收集您的姓名、电子邮件地址、电话号码等个人身份信息。</span><span class="en">Apart from what you choose to share via Sign in with Apple, we do not collect your name, email address, phone number, or other direct identifiers.</span></li>
+        <li><span class="zh">我们不收集精确位置数据。</span><span class="en">We do not collect precise location data.</span></li>
+        <li><span class="zh">我们不收集通讯录、相册等设备敏感数据；麦克风仅在您主动使用语音输入功能时使用，录音内容仅用于转成文字，不做其他用途、不予保存。</span><span class="en">We do not access contacts, photo libraries, or other sensitive device data; the microphone is used only when you actively use voice input — the audio is transcribed to text and never stored or used for anything else.</span></li>
+        <li><span class="zh">我们不会将您的数据出售给第三方。</span><span class="en">We never sell your data to third parties.</span></li>
     </ul>
 
-    <h2>3. 信息的使用方式</h2>
-    <p>我们收集的信息用于以下目的：</p>
+    <h2><span class="zh">3. 信息的使用方式</span><span class="en">3. How We Use Information</span></h2>
+    <p><span class="zh">我们收集的信息用于以下目的：</span><span class="en">We use the information we collect to:</span></p>
     <ol>
-        <li><strong>提供核心服务：</strong>将您的问题发送至 AI 引擎以生成智慧解答。</li>
-        <li><strong>存储您的记录：</strong>将您的提问和获得的智慧内容保存在服务器上，以便您在"修行日志"功能中随时回顾。</li>
-        <li><strong>改善产品体验：</strong>分析匿名使用趋势，优化回答质量。</li>
-        <li><strong>客户支持：</strong>在您联系我们时帮助排查问题。</li>
+        <li><span class="zh"><strong>提供核心服务：</strong>将您的问题发送至 AI 引擎以生成智慧解答。</span><span class="en"><strong>Provide core services:</strong> send your questions to the AI engine to generate guidance.</span></li>
+        <li><span class="zh"><strong>存储您的记录：</strong>将您的提问、感悟和获得的智慧内容保存在服务器上，以便您在"修行日志"功能中随时回顾，并在登录设备间同步。</span><span class="en"><strong>Store your records:</strong> save your questions, reflections, and received guidance on our servers so you can revisit them in the practice journal and sync them across signed-in devices.</span></li>
+        <li><span class="zh"><strong>提供打卡与收藏功能：</strong>依据打卡天数发放修行珍藏卡并保存收集进度。</span><span class="en"><strong>Power streaks &amp; the card collection:</strong> grant collectible cards based on your check-ins and keep your collection progress.</span></li>
+        <li><span class="zh"><strong>改善产品体验：</strong>分析匿名使用趋势，优化回答质量。</span><span class="en"><strong>Improve the product:</strong> analyze anonymous usage trends to improve answer quality.</span></li>
+        <li><span class="zh"><strong>客户支持：</strong>在您联系我们时帮助排查问题。</span><span class="en"><strong>Customer support:</strong> help troubleshoot issues when you contact us.</span></li>
     </ol>
 
-    <h2>4. 数据存储与安全</h2>
+    <h2><span class="zh">4. 数据存储与安全</span><span class="en">4. Data Storage &amp; Security</span></h2>
     <ul>
-        <li><strong>存储位置：</strong>您的数据存储在我们的云服务器上（域名 taomindapp.com，托管于腾讯云）。</li>
-        <li><strong>传输安全：</strong>所有数据传输均通过 HTTPS 加密。</li>
-        <li><strong>保留期限：</strong>我们会保留您的对话记录，直至您通过应用内功能删除，或通过联系我们要求删除。</li>
-        <li><strong>数据删除：</strong>您可以在"修行日志"中单条删除记录。如需完全删除所有数据，请通过下方联系方式联系我们。</li>
+        <li><span class="zh"><strong>存储位置：</strong>您的数据存储在我们的云服务器上（域名 taomindapp.com，托管于腾讯云）。</span><span class="en"><strong>Storage location:</strong> your data is stored on our cloud servers (domain taomindapp.com, hosted on Tencent Cloud).</span></li>
+        <li><span class="zh"><strong>传输安全：</strong>所有数据传输均通过 HTTPS 加密。</span><span class="en"><strong>Transport security:</strong> all data in transit is encrypted over HTTPS.</span></li>
+        <li><span class="zh"><strong>保留期限：</strong>我们会保留您的记录，直至您通过应用内功能删除，或通过联系我们要求删除。</span><span class="en"><strong>Retention:</strong> we keep your records until you delete them in the App or ask us to delete them.</span></li>
+        <li><span class="zh"><strong>数据删除：</strong>您可以在"修行日志"中单条删除记录。如需完全删除所有数据，请通过下方联系方式联系我们。</span><span class="en"><strong>Deletion:</strong> you can delete individual entries in the practice journal. To erase all of your data, contact us using the details below.</span></li>
     </ul>
 
-    <h2>5. 第三方服务</h2>
-    <p>本应用使用以下第三方服务：</p>
+    <h2><span class="zh">5. 第三方服务</span><span class="en">5. Third-Party Services</span></h2>
+    <p><span class="zh">本应用使用以下第三方服务：</span><span class="en">The App relies on the following third-party services:</span></p>
     <table>
-        <tr><th>服务</th><th>用途</th><th>数据处理</th></tr>
-        <tr><td>腾讯云（云托管）</td><td>后端 API 托管（taomindapp.com）</td><td>存储和传输您的提问与回答数据</td></tr>
-        <tr><td>阿里云百炼（DashScope）</td><td>AI 内容生成</td><td>接收您的问题以生成智慧内容</td></tr>
-        <tr><td>RevenueCat</td><td>订阅与内购管理</td><td>处理购买收据、管理订阅状态；关联匿名用户标识以恢复购买</td></tr>
-        <tr><td>Apple</td><td>通过 Apple 登录、App Store 内购</td><td>验证登录凭据；处理购买与退款</td></tr>
+        <tr><th><span class="zh">服务</span><span class="en">Service</span></th><th><span class="zh">用途</span><span class="en">Purpose</span></th><th><span class="zh">数据处理</span><span class="en">Data Handling</span></th></tr>
+        <tr><td><span class="zh">腾讯云（云托管）</span><span class="en">Tencent Cloud (hosting)</span></td><td><span class="zh">后端 API 托管（taomindapp.com）</span><span class="en">Backend API hosting (taomindapp.com)</span></td><td><span class="zh">存储和传输您的提问与回答数据</span><span class="en">Stores and transmits your questions and answers</span></td></tr>
+        <tr><td><span class="zh">阿里云百炼（DashScope）</span><span class="en">Alibaba Cloud DashScope</span></td><td><span class="zh">AI 内容生成</span><span class="en">AI content generation</span></td><td><span class="zh">接收您的问题以生成智慧内容</span><span class="en">Receives your questions to generate guidance</span></td></tr>
+        <tr><td>RevenueCat</td><td><span class="zh">订阅与内购管理</span><span class="en">Subscriptions &amp; purchases</span></td><td><span class="zh">处理购买收据、管理订阅状态；关联匿名用户标识以恢复购买</span><span class="en">Processes purchase receipts and manages subscription status; links an anonymous identifier to restore purchases</span></td></tr>
+        <tr><td>Apple</td><td><span class="zh">通过 Apple 登录、App Store 内购</span><span class="en">Sign in with Apple, App Store purchases</span></td><td><span class="zh">验证登录凭据；处理购买与退款</span><span class="en">Verifies sign-in credentials; processes purchases and refunds</span></td></tr>
     </table>
 
-    <h2>6. 儿童隐私</h2>
-    <p>本应用不面向 13 岁以下的儿童。我们不会有意收集儿童的个人信息。</p>
+    <h2><span class="zh">6. 儿童隐私</span><span class="en">6. Children's Privacy</span></h2>
+    <p><span class="zh">本应用不面向 13 岁以下的儿童。我们不会有意收集儿童的个人信息。</span><span class="en">The App is not directed at children under 13, and we do not knowingly collect personal information from children.</span></p>
 
-    <h2>7. 您的权利</h2>
-    <p>根据适用的数据保护法律，您享有以下权利：</p>
+    <h2><span class="zh">7. 您的权利</span><span class="en">7. Your Rights</span></h2>
+    <p><span class="zh">根据适用的数据保护法律，您享有以下权利：</span><span class="en">Depending on applicable data protection law, you may have the right to:</span></p>
     <ul>
-        <li><strong>知情权：</strong>了解我们收集了哪些关于您的数据。</li>
-        <li><strong>删除权：</strong>要求我们删除您的数据。</li>
-        <li><strong>更正权：</strong>要求更正不准确的数据。</li>
-        <li><strong>投诉权：</strong>向相关数据保护机构提出投诉。</li>
+        <li><span class="zh"><strong>知情权：</strong>了解我们收集了哪些关于您的数据。</span><span class="en"><strong>Access:</strong> know what data we hold about you.</span></li>
+        <li><span class="zh"><strong>删除权：</strong>要求我们删除您的数据。</span><span class="en"><strong>Deletion:</strong> request deletion of your data.</span></li>
+        <li><span class="zh"><strong>更正权：</strong>要求更正不准确的数据。</span><span class="en"><strong>Correction:</strong> request correction of inaccurate data.</span></li>
+        <li><span class="zh"><strong>投诉权：</strong>向相关数据保护机构提出投诉。</span><span class="en"><strong>Complaint:</strong> lodge a complaint with a data protection authority.</span></li>
     </ul>
-    <p>如需行使上述权利，请通过下方联系方式联系我们。</p>
+    <p><span class="zh">如需行使上述权利，请通过下方联系方式联系我们。</span><span class="en">To exercise any of these rights, contact us using the details below.</span></p>
 
-    <h2>8. 隐私政策的变更</h2>
-    <p>我们可能会不时更新本隐私政策。重大变更时，我们会通过应用内通知告知您。</p>
+    <h2><span class="zh">8. 隐私政策的变更</span><span class="en">8. Changes to This Policy</span></h2>
+    <p><span class="zh">我们可能会不时更新本隐私政策。重大变更时，我们会通过应用内通知告知您。</span><span class="en">We may update this Privacy Policy from time to time. For material changes, we will notify you in the App.</span></p>
 
-    <h2>9. 联系方式</h2>
-    <p>如有关于本隐私政策的任何问题，请联系：</p>
-    <p><strong>邮箱：</strong> <a href="mailto:haojia.zhang@icloud.com">haojia.zhang@icloud.com</a></p>
+    <h2><span class="zh">9. 联系方式</span><span class="en">9. Contact Us</span></h2>
+    <p><span class="zh">如有关于本隐私政策的任何问题，请联系：</span><span class="en">If you have any questions about this Privacy Policy, contact us at:</span></p>
+    <p><strong><span class="zh">邮箱：</span><span class="en">Email:</span></strong> <a href="mailto:haojia.zhang@icloud.com">haojia.zhang@icloud.com</a></p>
 
     <div class="footer">
-        <p>本隐私政策以中文编写，如有争议以中文版本为准。</p>
+        <p><span class="zh">本隐私政策以中文编写，如有争议以中文版本为准。</span><span class="en">This Privacy Policy was originally written in Chinese; in case of any conflict, the Chinese version shall prevail.</span></p>
+        <p style="margin-top:10px"><a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a> · <a href="terms.html"><span class="zh">服务条款</span><span class="en">Terms of Service</span></a> · <a href="support.html"><span class="zh">技术支持</span><span class="en">Support</span></a></p>
     </div>
+</main>
+
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  try { localStorage.setItem('tm-lang', l); } catch(e){}
+  document.getElementById('btn-zh').classList.toggle('on', l === 'zh');
+  document.getElementById('btn-en').classList.toggle('on', l === 'en');
+}
+(function(){
+  var cur = document.documentElement.getAttribute('data-lang') || 'zh';
+  document.getElementById('btn-zh').classList.toggle('on', cur === 'zh');
+  document.getElementById('btn-en').classList.toggle('on', cur === 'en');
+})();
+</script>
+
 </body>
 </html>
