@@ -317,21 +317,24 @@ function setLang(l){
 
 
 <script>
-/* In-app browsers (Threads / Instagram / Facebook / TikTok) cannot hand off to
-   the App Store: they block the itms-appss:// scheme and swallow target="_blank"
-   popups, so tapping the button does nothing. Detect those and navigate to the
-   https:// store URL in the SAME window, which they open fine. */
+/* App Store button: try itms-appss:// first (Safari hands off to the App Store
+   app). If the scheme is blocked (Threads / Instagram / Facebook in-app
+   browsers), the page stays visible after 1.5s — then fall back to the https://
+   URL in the same window so the user at least sees the store page. */
 (function(){
-  var ua = navigator.userAgent || '';
-  var inApp = /FBAN|FBAV|FB_IAB|Instagram|Threads|Barcelona|TikTok|BytedanceWebview|Line\//i.test(ua);
-  if (!inApp) return;
   var links = document.querySelectorAll('a.store-btn, a[href*="apps.apple.com"]');
   for (var i = 0; i < links.length; i++) {
-    links[i].removeAttribute('target');
-    links[i].removeAttribute('rel');
     links[i].addEventListener('click', function(e){
       e.preventDefault();
-      window.location.href = this.getAttribute('href');
+      var httpsUrl = this.getAttribute('href');
+      var appUrl = httpsUrl.replace('https://apps.apple.com', 'itms-appss://apps.apple.com');
+      var done = false;
+      setTimeout(function(){
+        if (!done) { done = true; window.location.href = httpsUrl; }
+      }, 1500);
+      window.location.href = appUrl;
+      /* If the scheme worked, the page navigates away and the timer never fires.
+         If blocked, the timer fires and we fall back to the https URL. */
     });
   }
 })();
