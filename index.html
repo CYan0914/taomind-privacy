@@ -151,7 +151,7 @@
     <span class="zh">《道德经》《金刚经》的古老智慧，经由 AI 重新讲述——每日经文、随心问道、修行打卡集藏卡，把修行装进口袋。</span>
     <span class="en">Timeless wisdom from the Tao Te Ching and Diamond Sutra, reimagined through AI — a daily verse, on-demand guidance, and a practice streak that rewards you with collectible cards.</span>
   </p>
-  <a class="store-btn" href="https://apps.apple.com/app/id6792008756" target="_blank" rel="noopener">
+  <a class="store-btn" href="https://apps.apple.com/app/id6792008756">
     <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
     <span class="t"><small><span class="zh">免费下载</span><span class="en">Download on the</span></small><span>App Store</span></span>
   </a>
@@ -269,7 +269,7 @@
   <div class="wrap">
     <h2><span class="zh">今天，从一章经文开始</span><span class="en">Begin with one verse today</span></h2>
     <p><span class="zh">两千五百年未曾过时，只因你从未读过。</span><span class="en">2,500 years old, and still the freshest thing on your phone.</span></p>
-    <a class="store-btn" href="https://apps.apple.com/app/id6792008756" target="_blank" rel="noopener">
+    <a class="store-btn" href="https://apps.apple.com/app/id6792008756">
       <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
       <span class="t"><small><span class="zh">免费下载</span><span class="en">Download on the</span></small><span>App Store</span></span>
     </a>
@@ -315,5 +315,26 @@ function setLang(l){
 })();
 </script>
 
+
+<script>
+/* In-app browsers (Threads / Instagram / Facebook / TikTok) cannot hand off to
+   the App Store: they block the itms-appss:// scheme and swallow target="_blank"
+   popups, so tapping the button does nothing. Detect those and navigate to the
+   https:// store URL in the SAME window, which they open fine. */
+(function(){
+  var ua = navigator.userAgent || '';
+  var inApp = /FBAN|FBAV|FB_IAB|Instagram|Threads|Barcelona|TikTok|BytedanceWebview|Line\//i.test(ua);
+  if (!inApp) return;
+  var links = document.querySelectorAll('a.store-btn, a[href*="apps.apple.com"]');
+  for (var i = 0; i < links.length; i++) {
+    links[i].removeAttribute('target');
+    links[i].removeAttribute('rel');
+    links[i].addEventListener('click', function(e){
+      e.preventDefault();
+      window.location.href = this.getAttribute('href');
+    });
+  }
+})();
+</script>
 </body>
 </html>
